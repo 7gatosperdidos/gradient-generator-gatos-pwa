@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Metada para PWA-->
+	<!--Modificar barra de estado ANDROID-->
+	<meta name="theme-color" content="#8a32e0">
+	<!--OPTIMIZACIONES-->
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFrindly" content="true">
+	<!--MODIFICAR barra de estado IOS-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-app-status-bar-style" content="black-translucent"> 
+	<meta name="description" content="Gradient Generator de Gatos es una aplicacion que pinta gatos">
+	<title>GRADIENT GEN</title>
+	<!--ICONOSS-->
+	<link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+	<link rel="apple-touch-icon" href="./img/favicon.png">
+	<link rel="apple-touch-startup-image" href="./img/favicon.png">
+	<!--MANIFIESTO-->
+    <link rel="manifest" href="./manifest.json">
+	<!--ESTILOS-->
+	<script src="https://unpkg.com/vue@next"></script>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div id="app" class="app">
+			<h1>{{title}}</h1>
+		<hr>
+		<form>
+			<label for="color_1"> Color 1: 
+				<input type="color" name="" id="color_1" v-model="color1">
+			</label>
+			<label for="color_2"> Color 2: 
+				<input type="color" name="" id="color_2" v-model="color2">
+			</label>
+			
+		</form>
+
+			<p>HEX1 = {{color1}}</p>
+			<p>HEX2 = {{color2}}</p>
+			<hr>
+			<label><input class="input_linear" type="text" :value="setColor"></label>
+			<hr>
+
+			<label class="input_radio"><input value="1" type="radio" v-model="orientation">RIGHT</label>
+			<label class="input_radio"><input value="2" type="radio" v-model="orientation">LEFT</label>
+			<label class="input_radio"><input value="3" type="radio" v-model="orientation">TOP</label>
+			<label class="input_radio"><input value="4" type="radio" v-model="orientation">BOTTOM</label>
+			<hr>
+
+			<div class="area" :style="setColor"></div>
+			<hr>
+			<p>Estamos auditando la app, con el inspector de chrome... "lighthouse" hicimos
+				BEST PRACTICES, ACCESIBILYT, SEO etc
+			</p>
+	</div>
+
+	
+
+	<script src="./load.js"></script>
+	<script src="./js/main.js"></script>
+	<script src="./js/mount.js"></script>
+</body>
+</html>
